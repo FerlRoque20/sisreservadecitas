@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::create([
+       User::create([
             'name'=>'Administrador',
             'email'=>'administrador@gmail.com',
             'password'=>hash::make('123456789')
@@ -44,6 +44,8 @@ class DatabaseSeeder extends Seeder
             'email'=>'cliente1@gmail.com',
             'password'=>hash::make('123456789')
         ]);
+
+        $this->call([ClienteSeeder::class,]);
 
     }
 }

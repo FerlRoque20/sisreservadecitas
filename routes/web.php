@@ -74,3 +74,31 @@ Route::get('/admin/secretarias/{id}/confirm-delete', [App\Http\Controllers\Secre
 
 //Rutas para el administrador - Secretarias - delete
 Route::delete('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'destroy'])->name('admin.secretarias.destroy')->middleware('auth');
+
+
+
+
+//Rutas para el administrador - clientes
+Route::get('/admin/clientes', [App\Http\Controllers\ClienteController::class, 'index'])->name('admin.clientes.index')->middleware('auth');
+
+//Rutas para el administrador - clientes - create
+Route::get('/admin/clientes/create', [App\Http\Controllers\ClienteController::class, 'create'])->name('admin.clientes.create')->middleware('auth');
+
+//Rutas para el administrador - clientes - store
+Route::post('/admin/clientes/create', [App\Http\Controllers\ClienteController::class, 'store'])->name('admin.clientes.store')->middleware('auth');
+
+//Rutas para el administrador - clientes - edit
+Route::get('/admin/clientes/{id}', [App\Http\Controllers\ClienteController::class, 'show'])->name('admin.clientes.show')->middleware('auth');
+
+//Rutas para el administrador - clientes - edit
+Route::get('/admin/clientes/{id}/edit', [App\Http\Controllers\ClienteController::class, 'edit'])->name('admin.clientes.edit')->middleware('auth');
+
+//Rutas para el administrador - clientes - edit - Actualizar Usuario
+Route::put('/admin/clientes/{id}', [App\Http\Controllers\ClienteController::class, 'update'])->name('admin.clientes.update')->middleware('auth');
+
+//Rutas para el administrador - clientes - Confirm-delete
+Route::get('/admin/clientes/{id}/confirm-delete', [App\Http\Controllers\ClienteController::class, 'confirmDelete'])->name('admin.clientes.confirmDelete')->middleware('auth');
+
+//Rutas para el administrador - clientes - delete
+Route::delete('/admin/clientes/{id}', [App\Http\Controllers\ClienteController::class, 'destroy'])->name('admin.clientes.destroy')->middleware('auth');
+
