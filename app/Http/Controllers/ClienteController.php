@@ -59,9 +59,10 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cliente $cliente)
+    public function show($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('admin.clientes.show', compact('cliente'));
     }
 
     /**
