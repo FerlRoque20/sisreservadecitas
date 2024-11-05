@@ -21,7 +21,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.clientes.create');
     }
 
     /**
@@ -29,7 +29,31 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$datos = request()->all();
+        //return response()->json($datos);
+        $request->validate([
+            'nombres' => 'required',
+            'apellidos' => 'required',
+            'dni' => 'required|unique:secretarias',
+            'celular' => 'required',
+            'fecha_nacimiento' => 'required',
+            'correo'=>'required|max:50|unique:clientes',
+
+        ]);
+
+        $cliente = new Cliente();
+        $cliente->nombres = $request->nombres;
+        $cliente->apellidos = $request->apellidos;
+        $cliente->dni = $request->dni;
+        $cliente->celular = $request->celular;
+        $cliente->fecha_nacimiento = $request->fecha_nacimiento;
+        $cliente->correo = $request->correo;
+        $cliente->save();
+
+        return redirect()->route('admin.clientes.index')
+            ->with('mensaje','Se registro al Cliente Exitosamente')
+            ->with('icono','success');
+
     }
 
     /**
