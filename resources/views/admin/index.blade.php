@@ -27,10 +27,24 @@
               <p>Secretarios</p>
           </div>
           <div class="icon">
-              <i class="ion fas bi bi-file-person"></i>
+              <i class="ion fas fas bi bi-person-circle"></i>
           </div>
           <a href="{{url('admin/secretarias')}}" class="small-box-footer">Mas Informacion <i class="fas fa-arrow-circle-right"></i></a>
       </div>
   </div>
+
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-success">
+          <div class="inner">
+              <h3>{{$total_clientes}}</h3>
+              <p>Clientes</p>
+          </div>
+          <div class="icon">
+              <i class="ion fas bi bi-person-fill-check"></i>
+          </div>
+          <a href="{{url('admin/clientes')}}" class="small-box-footer">Mas Informacion <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+  </div>
+
 </div>
 @endsection

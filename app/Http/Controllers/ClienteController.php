@@ -113,9 +113,17 @@ class ClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    
-    public function destroy(Cliente $cliente)
+    public function confirmdelete($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('admin.clientes.delete', compact('cliente'));
+    }
+
+    public function destroy($id)
+    {
+        Cliente::destroy($id);
+        return redirect()->route('admin.clientes.index')
+            ->with('mensaje','El cliente ha sido eliminado correctamente. ')
+            ->with('icono','success');
     }
 }
