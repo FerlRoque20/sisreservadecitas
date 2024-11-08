@@ -34,10 +34,12 @@ class ClienteController extends Controller
         $request->validate([
             'nombres' => 'required',
             'apellidos' => 'required',
-            'dni' => 'required|unique:secretarias',
+            'dni' => 'required|unique:clientes',
             'celular' => 'required',
             'fecha_nacimiento' => 'required',
             'correo'=>'required|max:50|unique:clientes',
+            'direccion' => 'nullable', // Campo que puede ser nulo
+
 
         ]);
 
@@ -48,6 +50,7 @@ class ClienteController extends Controller
         $cliente->celular = $request->celular;
         $cliente->fecha_nacimiento = $request->fecha_nacimiento;
         $cliente->correo = $request->correo;
+        $cliente->direccion = $request->direccion;
         $cliente->save();
 
         return redirect()->route('admin.clientes.index')
@@ -68,22 +71,49 @@ class ClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cliente $cliente)
+    public function edit($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('admin.clientes.edit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, $id)
     {
-        //
+        $cliente = Cliente::find($id);
+        
+        $request->validate([
+            'nombres' => 'required',
+            'apellidos' => 'required',
+            'dni' => 'required|unique:clientes,dni,'.$cliente->id,
+            'celular' => 'required',
+            'fecha_nacimiento' => 'required',
+            'correo'=>'required|max:50|unique:clientes,correo,'.$cliente->id,
+            'direccion' => 'nullable' // Campo que puede ser nulo
+
+
+        ]);
+
+        $cliente->nombres = $request->nombres;
+        $cliente->apellidos = $request->apellidos;
+        $cliente->dni = $request->dni;
+        $cliente->celular = $request->celular;
+        $cliente->fecha_nacimiento = $request->fecha_nacimiento;
+        $cliente->correo = $request->correo;
+        $cliente->direccion = $request->direccion;
+        $cliente->save();
+
+        return redirect()->route('admin.clientes.index')
+            ->with('mensaje','Se actualizo al Cliente Exitosamente')
+            ->with('icono','success');
     }
 
     /**
      * Remove the specified resource from storage.
      */
+    
     public function destroy(Cliente $cliente)
     {
         //

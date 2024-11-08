@@ -128,7 +128,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="from group">
-                                <a href="{{url('admin/secretarias')}}" class='btn btn-secondary'>Cancelar</a>
+                                <a href="{{url('admin/clientes')}}" class='btn btn-secondary'>Cancelar</a>
                                 <button type='submit' class='btn btn-primary'>Registar Nuevo</button>
                             </div>
                         </div>
