@@ -160,6 +160,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas bi bi-box-fill"></i>
+              <p>
+                Areas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/areas/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Creacion de Areas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/areas')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de Areas</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
             <a href="#" class="nav-link" style= "background-color: #a9200e" >
             <i class="nav-icon fas bi bi-box-arrow-right"></i>
             <p>

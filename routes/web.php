@@ -102,3 +102,30 @@ Route::get('/admin/clientes/{id}/confirm-delete', [App\Http\Controllers\ClienteC
 //Rutas para el administrador - clientes - delete
 Route::delete('/admin/clientes/{id}', [App\Http\Controllers\ClienteController::class, 'destroy'])->name('admin.clientes.destroy')->middleware('auth');
 
+
+
+
+//Rutas para el administrador - areas
+Route::get('/admin/areas', [App\Http\Controllers\AreaController::class, 'index'])->name('admin.areas.index')->middleware('auth');
+
+//Rutas para el administrador - areas - create
+Route::get('/admin/areas/create', [App\Http\Controllers\AreaController::class, 'create'])->name('admin.areas.create')->middleware('auth');
+
+//Rutas para el administrador - areas - store
+Route::post('/admin/areas/create', [App\Http\Controllers\AreaController::class, 'store'])->name('admin.areas.store')->middleware('auth');
+
+//Rutas para el administrador - areas - edit
+Route::get('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'show'])->name('admin.areas.show')->middleware('auth');
+
+//Rutas para el administrador - areas - edit
+Route::get('/admin/areas/{id}/edit', [App\Http\Controllers\AreaController::class, 'edit'])->name('admin.areas.edit')->middleware('auth');
+
+//Rutas para el administrador - areas - edit - Actualizar Usuario
+Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areas.update')->middleware('auth');
+
+//Rutas para el administrador - areas - Confirm-delete
+Route::get('/admin/areas/{id}/confirm-delete', [App\Http\Controllers\AreaController::class, 'confirmDelete'])->name('admin.areas.confirmDelete')->middleware('auth');
+
+//Rutas para el administrador - areas - delete
+Route::delete('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'destroy'])->name('admin.areas.destroy')->middleware('auth');
+
