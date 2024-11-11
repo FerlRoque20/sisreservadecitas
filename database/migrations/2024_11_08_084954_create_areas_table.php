@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
+            
+            $table->string('numero', 2)->unique();  
+            $table->string('celular', 9)->unique();  
+            $table->string('encargado');
+            $table->string('disponiviidad'); 
+            $table->string('especialidad', 100);
+            $table->string('ubicacion', 100);
+            
             $table->timestamps();
         });
     }
