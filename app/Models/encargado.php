@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class encargado extends Model
 {
     use HasFactory;
-    protected $fillable = ['celular','disponibiidad','especialidad','ubicacion'];
-    public function encargados(){
-        return $this->hasMany(Encargado::class);
+    protected $fillable = [
+        'numero',
+        'apellido',
+        'especialidad'
+    ];
+    public function areas(){
+        return $this->belongsTo(Area::class);
     }
     public function horarios(){
         return $this->hasMany(Horario::class);

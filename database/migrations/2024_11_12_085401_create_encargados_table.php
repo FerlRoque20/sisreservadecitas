@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('encargados', function (Blueprint $table) {
             $table->id();
-              
-            $table->string('celular', 9)->unique();  
-            $table->string('disponibilidad'); 
-            $table->string('especialidad', 100);
-            $table->string('ubicacion', 100);
             
+            $table->string('nombre',50);
+            $table->string('apellido',50);
+            $table->string('especialidad',50);
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('encargados');
     }
 };
