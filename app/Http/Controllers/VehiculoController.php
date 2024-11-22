@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class VehiculoController extends Controller
 {
@@ -12,7 +16,8 @@ class VehiculoController extends Controller
      */
     public function index()
     {
-        //
+        $vehiculos = Vehiculo::with('user')->get(); // Obtiene vehículos con sus usuarios asociados
+        return view('admin.vehiculos.index', compact('vehiculos'));
     }
 
     /**
@@ -20,7 +25,7 @@ class VehiculoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.vehiculos.create');
     }
 
     /**
@@ -28,7 +33,39 @@ class VehiculoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$datos = request()->all();
+        //return response()->json($datos);
+        $request->validate([
+            'marca' => 'required',
+            'modelo' => 'required',
+            'año' => 'required',
+            'color' => 'required',
+            'placa' => 'required|unique:vehiculos',
+            'tipo_conbustible' => 'required',
+        ]);
+
+        $usuario = Auth::user();
+
+        if (!$usuario) {
+            // Si no hay usuario autenticado, redirige con un error
+            return redirect()->back()->with('mensaje', 'Debe estar autenticado para registrar un vehículo.')
+                ->with('icono', 'error');
+        }
+
+        $vehiculo = new Vehiculo();
+        $vehiculo->user_id = $usuario->id;
+        $vehiculo->marca = $request->marca;
+        $vehiculo->modelo = $request->modelo;
+        $vehiculo->año = $request->año;
+        $vehiculo->color = $request->color;
+        $vehiculo->placa = $request->placa;
+        $vehiculo->tipo_conbustible = $request->tipo_conbustible;
+        $vehiculo->save();
+
+        return redirect()->route('admin.vehiculos.index')
+        ->with('mensaje','Se registro Exitosamente')
+        ->with('icono','success');
+
     }
 
     /**

@@ -129,3 +129,28 @@ Route::get('/admin/areas/{id}/confirm-delete', [App\Http\Controllers\AreaControl
 //Rutas para el administrador - areas - delete
 Route::delete('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'destroy'])->name('admin.areas.destroy')->middleware('auth');
 
+
+//Rutas para el administrador Cliente - vehiculos
+Route::get('/admin/vehiculos', [App\Http\Controllers\VehiculoController::class, 'index'])->name('admin.vehiculos.index')->middleware('auth');
+
+//Rutas para el administrador Cliente - vehiculos - create
+Route::get('/admin/vehiculos/create', [App\Http\Controllers\VehiculoController::class, 'create'])->name('admin.vehiculos.create')->middleware('auth');
+
+//Rutas para el administrador Cliente  - vehiculos - store
+Route::post('/admin/vehiculos/create', [App\Http\Controllers\VehiculoController::class, 'store'])->name('admin.vehiculos.store')->middleware('auth');
+
+//Rutas para el administrador Cliente - vehiculos - edit
+Route::get('/admin/vehiculos/{id}', [App\Http\Controllers\VehiculoController::class, 'show'])->name('admin.vehiculos.show')->middleware('auth');
+
+//Rutas para el administrador Cliente - vehiculos - edit
+Route::get('/admin/vehiculos/{id}/edit', [App\Http\Controllers\VehiculoController::class, 'edit'])->name('admin.vehiculos.edit')->middleware('auth');
+
+//Rutas para el administrador Cliente - vehiculos - edit - Actualizar Usuario
+Route::put('/admin/vehiculos/{id}', [App\Http\Controllers\VehiculoController::class, 'update'])->name('admin.vehiculos.update')->middleware('auth');
+
+//Rutas para el administrador Cliente - vehiculos - Confirm-delete
+Route::get('/admin/vehiculos/{id}/confirm-delete', [App\Http\Controllers\VehiculoController::class, 'confirmDelete'])->name('admin.vehiculos.confirmDelete')->middleware('auth');
+
+//Rutas para el administrador Cliente - vehiculos - delete
+Route::delete('/admin/vehiculos/{id}', [App\Http\Controllers\VehiculoController::class, 'destroy'])->name('admin.vehiculos.destroy')->middleware('auth');
+
