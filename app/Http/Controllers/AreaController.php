@@ -28,27 +28,18 @@ class AreaController extends Controller
 
     public function store(Request $request)
     {
-        //$datos = request()->all();
-        //return response()->json($datos);
         $request->validate([
-            'celular' => 'required|unique:areas',
+            'celular' => 'required|digits:9|unique:areas',
             'disponibilidad' => 'required',
             'especialidad' => 'required',
             'ubicacion' => 'required',
         ]);
 
-       // Area::create($request->all());
-
-       $area = new Area();
-       $area->celular = $request->celular;
-       $area->disponibilidad = $request->disponibilidad;
-       $area->especialidad = $request->especialidad;
-       $area->ubicacion = $request->ubicacion;
-       $area->save();
+        Area::create($request->only(['celular', 'disponibilidad', 'especialidad', 'ubicacion']));
 
         return redirect()->route('admin.areas.index')
-        ->with('mensaje','Se registro al Secretario Exitosamente')
-        ->with('icono','success');
+            ->with('mensaje', 'Se registró el área exitosamente')
+            ->with('icono', 'success');
     }
 
     public function show(Area $area)

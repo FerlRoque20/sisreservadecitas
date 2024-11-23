@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class encargado extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'numero',
-        'apellido',
-        'especialidad'
-    ];
-    public function areas(){
+    protected $fillable = ['numero', 'apellido', 'especialidad'];
+
+    public function areas()
+    {
         return $this->belongsTo(Area::class);
     }
-    public function horarios(){
+
+    public function horarios()
+    {
         return $this->hasMany(Horario::class);
     }
 }
