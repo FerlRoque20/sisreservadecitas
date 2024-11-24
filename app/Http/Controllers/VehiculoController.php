@@ -6,6 +6,8 @@ use App\Models\Vehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Notifications\NotificationVehiculo;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -87,9 +89,15 @@ class VehiculoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Vehiculo $vehiculo)
+    public function update(Request $request)
     {
-        //
+        
+        $recipient = 'logicainformatica18@gmail.com';
+        $name = 'Usuario';
+    
+        Notification::route('mail', $recipient)->notify(new NotificationVehiculo($name));
+    
+        return " enviado";
     }
 
     /**
@@ -99,4 +107,6 @@ class VehiculoController extends Controller
     {
         //
     }
+
+
 }

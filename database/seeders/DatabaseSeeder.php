@@ -32,7 +32,11 @@ class DatabaseSeeder extends Seeder
             'email'=>'secretario@gmail.com',
             'password'=>hash::make('123456789')
         ]);
-
+        User::create([
+            'name'=>'Administrador',
+            'email'=>'logicainformatica18@gmail.com',
+            'password'=>hash::make('123456789')
+        ]);
         User::create([
             'name'=>'Mecanico1',
             'email'=>'mecanico1@gmail.com',

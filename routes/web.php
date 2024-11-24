@@ -154,3 +154,7 @@ Route::get('/admin/vehiculos/{id}/confirm-delete', [App\Http\Controllers\Vehicul
 //Rutas para el administrador Cliente - vehiculos - delete
 Route::delete('/admin/vehiculos/{id}', [App\Http\Controllers\VehiculoController::class, 'destroy'])->name('admin.vehiculos.destroy')->middleware('auth');
 
+
+//Rutas para el administrador Cliente - vehiculos - delete
+Route::get('/admin/vehiculos_', [App\Http\Controllers\VehiculoController::class, 'update'])->name('admin.vehiculos.update')->middleware('auth');
+
