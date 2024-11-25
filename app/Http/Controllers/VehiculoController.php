@@ -73,9 +73,10 @@ class VehiculoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Vehiculo $vehiculo)
+    public function show($id)
     {
-        //
+        $vehiculo = Vehiculo::with('user')->findOrFail($id);
+        return view('admin.vehiculos.show', compact('vehiculo'));
     }
 
     /**
@@ -92,7 +93,7 @@ class VehiculoController extends Controller
     public function update(Request $request)
     {
         
-        $recipient = 'logicainformatica18@gmail.com';
+        $recipient = 'alvaradocami717@gmail.com';
         $name = 'Usuario';
     
         Notification::route('mail', $recipient)->notify(new NotificationVehiculo($name));
