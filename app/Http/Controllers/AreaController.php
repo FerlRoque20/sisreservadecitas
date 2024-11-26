@@ -31,45 +31,51 @@ class AreaController extends Controller
         //$datos = request()->all();
         //return response()->json($datos);
         $request->validate([
-            'celular' => 'required|unique:areas',
+            'celular' => 'required|digits:9|unique:areas',
             'disponibilidad' => 'required',
             'especialidad' => 'required',
             'ubicacion' => 'required',
         ]);
 
-       // Area::create($request->all());
-
-       $area = new Area();
-       $area->celular = $request->celular;
-       $area->disponibilidad = $request->disponibilidad;
-       $area->especialidad = $request->especialidad;
-       $area->ubicacion = $request->ubicacion;
-       $area->save();
+        Area::create($request->only(['celular', 'disponibilidad', 'especialidad', 'ubicacion']));
 
         return redirect()->route('admin.areas.index')
         ->with('mensaje','Se registro al Secretario Exitosamente')
         ->with('icono','success');
     }
 
-    public function show(Area $area)
+    public function show($id)
     {
-        //
+        $area = Area::findOrFail($id);
+        return view('admin.areas.show',compact('area'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Area $area)
+    public function edit($id)
     {
-        //
+        $area = Area::findOrFail($id);
+        return view('admin.areas.edit',compact('area'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Area $area)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'celular' => 'required',
+            'disponibilidad' => 'required',
+            'especialidad' => 'required',
+            'ubicacion' => 'required',
+        ]);
+        $area = Area::find($id);
+        $area ->update($request->only(['celular', 'disponibilidad', 'especialidad', 'ubicacion']));
+
+        return redirect()->route('admin.areas.index')
+            ->with('mensaje','Se actualizo el area Exitosamente')
+            ->with('icono','success');
     }
 
     /**

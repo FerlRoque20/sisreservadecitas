@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
               
-            $table->string('celular', 9)->unique();  
+            $table->string('celular', 9);
             $table->string('disponibilidad'); 
             $table->string('especialidad', 100);
             $table->string('ubicacion', 100);

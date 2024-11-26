@@ -5,14 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class encargado extends Model
+class Encargado extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'numero',
-        'apellido',
-        'especialidad'
-    ];
+    protected $fillable = ['numero', 'apellido', 'especialidad'];
+    
     public function areas(){
         return $this->belongsTo(Area::class);
     }

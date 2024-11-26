@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
-    protected $fillable = ['celular','disponibiidad','especialidad','ubicacion'];
+    protected $fillable = ['celular', 'disponibilidad', 'especialidad', 'ubicacion'];
+    
     public function encargados(){
         return $this->hasMany(Encargado::class);
     }
