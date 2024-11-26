@@ -28,8 +28,6 @@ class AreaController extends Controller
 
     public function store(Request $request)
     {
-        //$datos = request()->all();
-        //return response()->json($datos);
         $request->validate([
             'celular' => 'required|digits:9|unique:areas',
             'disponibilidad' => 'required',
@@ -40,8 +38,8 @@ class AreaController extends Controller
         Area::create($request->only(['celular', 'disponibilidad', 'especialidad', 'ubicacion']));
 
         return redirect()->route('admin.areas.index')
-        ->with('mensaje','Se registro al Secretario Exitosamente')
-        ->with('icono','success');
+            ->with('mensaje', 'Se registró el área exitosamente')
+            ->with('icono', 'success');
     }
 
     public function show($id)

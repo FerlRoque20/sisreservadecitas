@@ -9,11 +9,15 @@ class Area extends Model
 {
     use HasFactory;
     protected $fillable = ['celular', 'disponibilidad', 'especialidad', 'ubicacion'];
-    
-    public function encargados(){
+
+    public function encargados()
+    {
         return $this->hasMany(Encargado::class);
     }
-    public function horarios(){
+
+    public function horarios()
+    {
         return $this->hasMany(Horario::class);
     }
 }
+

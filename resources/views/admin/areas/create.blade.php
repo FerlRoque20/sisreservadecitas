@@ -12,7 +12,7 @@
                 <h3 class="card-title">Registra la información</h3>
             </div>
             <div class="card-body">
-               <form action="{{ route('admin.areas.store') }}" class="needs-validation" novalidate method="POST">
+                <form action="{{ route('admin.areas.store') }}" class="needs-validation" novalidate method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-md-3">
@@ -32,6 +32,8 @@
                         <div class="col-md-3">
                             <div class="from group">
                                 <label for="">Disponibilidad</label> <b>*</b>
+                                <select name="disponibilidad" id="" class="form-control">
+                                <option value="disponible">DISPONIBLE</option>
                                 <select name="disponibilidad" id="" class="form-control">
                                     <option value="disponible">DISPONIBLE</option>
                                     <option value="ocupado">OCUPADO</option>

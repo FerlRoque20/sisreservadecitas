@@ -9,11 +9,14 @@ class Encargado extends Model
 {
     use HasFactory;
     protected $fillable = ['numero', 'apellido', 'especialidad'];
-    
-    public function areas(){
+
+    public function areas()
+    {
         return $this->belongsTo(Area::class);
     }
-    public function horarios(){
+
+    public function horarios()
+    {
         return $this->hasMany(Horario::class);
     }
 }
