@@ -16,6 +16,7 @@ return new class extends Migration
             
             $table->string('nombre',50);
             $table->string('apellido',50);
+            $table->string('celular',50);
             $table->string('especialidad',50);
 
             $table->unsignedBigInteger('user_id');

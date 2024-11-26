@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Encargado extends Model
 {
     use HasFactory;
-    protected $fillable = ['numero', 'apellido', 'especialidad'];
+    protected $fillable = ['numero', 'apellido','telefono', 'especialidad'];
 
     public function areas()
     {

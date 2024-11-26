@@ -21,10 +21,10 @@
                     <thead class="thead-dark">
                         <tr>
                             <th style = "text-align: center">Nro</th>
-                            <th style = "text-align: center">NOMBRES</th>
-                            <th style = "text-align: center">APELLIDOS</th>
+                            <th style = "text-align: center">NOMBRES Y APELLIDOS</th>
+                            <th style = "text-align: center">CELULAR</th>
                             <th style = "text-align: center">ESPECCIALIDAD</th>
-                            <th style = "text-align: center">UBICACION</th>
+                            <th style = "text-align: center">EMAIL</th>
                             <th style = "text-align: center">ACCIONES</th>
                         </tr>
                     </thead>
@@ -33,8 +33,10 @@
                     @foreach($encargados as $encargado)
                         <tr>
                             <td style = "text-align: center">{{ $contador++ }}</td>
-                            <td>{{ $encargado->nombre}}</td>
+                            <td>{{ $encargado->nombre." ".$encargado->apellidos}}</td>
+                            <td>{{ $encargado->celular}}</td>
                             <td>{{ $encargado->especialidad}}</td>
+                            <td>{{ $encargado->user->email}}</td>
 
 
                         <td style="text-align: center">
@@ -56,12 +58,12 @@
                         "pageLength": 10,
                         "language": {
                             "emptyTable": "No hay información",
-                            "info": "Mostrando _START_ a _END_ de _TOTAL_ areas",
-                            "infoEmpty": "Mostrando 0 a 0 de 0 areas",
-                            "infoFiltered": "(Filtrado de _MAX_ total areas)",
+                            "info": "Mostrando _START_ a _END_ de _TOTAL_ encargado",
+                            "infoEmpty": "Mostrando 0 a 0 de 0 encargado",
+                            "infoFiltered": "(Filtrado de _MAX_ total encargado)",
                             "infoPostFix": "",
                             "thousands": ",",
-                            "lengthMenu": "Mostrar _MENU_ areas",
+                            "lengthMenu": "Mostrar _MENU_ encargado",
                             "loadingRecords": "Cargando...",
                             "processing": "Procesando...",
                             "search": "Buscador:",
