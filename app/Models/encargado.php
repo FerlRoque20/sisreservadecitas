@@ -19,4 +19,10 @@ class Encargado extends Model
     {
         return $this->hasMany(Horario::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

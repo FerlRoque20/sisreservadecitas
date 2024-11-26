@@ -158,3 +158,28 @@ Route::delete('/admin/vehiculos/{id}', [App\Http\Controllers\VehiculoController:
 //Rutas para el administrador Cliente - vehiculos - delete
 Route::get('/admin/vehiculos_', [App\Http\Controllers\VehiculoController::class, 'update'])->name('admin.vehiculos.update')->middleware('auth');
 
+
+
+//Rutas para el administrador - encargados
+Route::get('/admin/encargados', [App\Http\Controllers\EncargadoController::class, 'index'])->name('admin.encargados.index')->middleware('auth');
+
+//Rutas para el administrador - encargados - create
+Route::get('/admin/encargados/create', [App\Http\Controllers\EncargadoController::class, 'create'])->name('admin.encargados.create')->middleware('auth');
+
+//Rutas para el administrador - encargados - store
+Route::post('/admin/encargados/create', [App\Http\Controllers\EncargadoController::class, 'store'])->name('admin.encargados.store')->middleware('auth');
+
+//Rutas para el administrador - encargados - edit
+Route::get('/admin/encargados/{id}', [App\Http\Controllers\EncargadoController::class, 'show'])->name('admin.encargados.show')->middleware('auth');
+
+//Rutas para el administrador - encargados - edit
+Route::get('/admin/encargados/{id}/edit', [App\Http\Controllers\EncargadoController::class, 'edit'])->name('admin.encargados.edit')->middleware('auth');
+
+//Rutas para el administrador - encargados - edit - Actualizar Usuario
+Route::put('/admin/encargados/{id}', [App\Http\Controllers\EncargadoController::class, 'update'])->name('admin.encargados.update')->middleware('auth');
+
+//Rutas para el administrador - encargados - Confirm-delete
+Route::get('/admin/encargados/{id}/confirm-delete', [App\Http\Controllers\EncargadoController::class, 'confirmDelete'])->name('admin.encargados.confirmDelete')->middleware('auth');
+
+//Rutas para el administrador - encargados - delete
+Route::delete('/admin/encargados/{id}', [App\Http\Controllers\EncargadoController::class, 'destroy'])->name('admin.encargados.destroy')->middleware('auth');

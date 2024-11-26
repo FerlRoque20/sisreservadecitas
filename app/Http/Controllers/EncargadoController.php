@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
+use App\Models\Horario;
+use App\Models\User;
+
 use App\Models\encargado;
 use Illuminate\Http\Request;
 
@@ -12,7 +16,8 @@ class EncargadoController extends Controller
      */
     public function index()
     {
-        //
+        $encargados = Encargado::with('user')->get();
+        return view('admin.encargados.index',compact('encargados'));
     }
 
     /**
