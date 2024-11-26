@@ -15,7 +15,7 @@
                 <form action="{{ route('admin.areas.store') }}" class="needs-validation" novalidate method="POST">
                     @csrf
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="from group">
                                 <label for="">N° Celular</label> <b>*</b>
                                 <input type="text" value="{{old('celular')}}" name="celular" class="form-control" required>
@@ -29,20 +29,18 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
-                            <div class="from group">
-                                <label for="">Disponibilidad</label> <b>*</b>
-                                <select name="disponibilidad" id="" class="form-control">
-                                <option value="disponible">DISPONIBLE</option>
-                                <select name="disponibilidad" id="" class="form-control">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="disponibilidad">Disponibilidad</label> <b>*</b>
+                                <select name="disponibilidad" id="disponibilidad" class="form-control">
                                     <option value="disponible">DISPONIBLE</option>
                                     <option value="ocupado">OCUPADO</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
+
+
+                        <div class="col-md-4">
                             <div class="from group">
                                 <label for="">Especialidad</label> <b>*</b>
                                 <input type="text" value="{{old('especialidad')}}" name="especialidad" class="form-control" required>
@@ -54,8 +52,13 @@
                                 <div class="invalid-feedback">Error: Ingrese un numero de especialidad. Por favor, revisa e inténtalo nuevamente.</div>
 
                             </div>
-                        </div>                    
-                    <br>
+                        </div>       
+
+                    </div>
+
+                    <div class="row">
+                                 
+                    
                         <div class="col-md-12">
                             <div class="from group">
                                 <label for="">Ubicacion</label> <b>*</b>
@@ -64,6 +67,8 @@
                                 @error('ubicacion')
                                 <small style="color:red">{{ $message }}</small>
                                 @enderror
+
+                                <div class="invalid-feedback">Error: Ingrese un numero de Fila. Por favor, revisa e inténtalo nuevamente.</div>
 
                             
                             </div>

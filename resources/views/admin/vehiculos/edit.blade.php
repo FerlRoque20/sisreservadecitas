@@ -70,7 +70,7 @@
                         <div class="col-md-3">
                             <div class="from group">
                                 <label for="">Placa</label> <b>*</b>
-                                <input type="text" value="{{$vehiculo->placa}}" name="placa" class="form-control" required>
+                                <input type="number" value="{{$vehiculo->placa}}" name="placa" class="form-control" required>
 
                                 @error('placa')
                                 <small style="color:red">{{ $message }}</small>

@@ -82,7 +82,7 @@
                         <div class="col-md-9">
                             <div class="from group">
                                 <label for="">Tipo de Combustible</label>
-                                <input type="address" value="{{$vehiculo->tipo_conbustible}}" name="direccion" class="form-control" disabled>
+                                <input type="text" value="{{$vehiculo->tipo_conbustible}}" name="direccion" class="form-control" disabled>
 
                                 @error('tipo_conbustible')
                                 <small style="color:red">{{ $message }}</small>

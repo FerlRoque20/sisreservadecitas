@@ -121,7 +121,7 @@ Route::get('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'sh
 Route::get('/admin/areas/{id}/edit', [App\Http\Controllers\AreaController::class, 'edit'])->name('admin.areas.edit')->middleware('auth');
 
 //Rutas para el administrador - areas - edit - Actualizar Usuario
-Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areasc')->middleware('auth');
+Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areas')->middleware('auth');
 
 //Rutas para el administrador - areas - Confirm-delete
 Route::get('/admin/areas/{id}/confirm-delete', [App\Http\Controllers\AreaController::class, 'confirmDelete'])->name('admin.areas.confirmDelete')->middleware('auth');
