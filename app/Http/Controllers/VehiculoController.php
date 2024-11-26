@@ -82,17 +82,43 @@ class VehiculoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Vehiculo $vehiculo)
+    public function edit($id)
     {
-        //
+        $vehiculo = Vehiculo::with('user')->findOrFail($id);
+        return view('admin.vehiculos.edit', compact('vehiculo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        
+        $vehiculo = Vehiculo::find($id);
+
+        $request->validate([
+            'marca' => 'required',
+            'modelo' => 'required',
+            'año' => 'required',
+            'color' => 'required',
+            'placa' => 'required|unique:vehiculos,placa,'. $vehiculo->id,
+            'tipo_conbustible' => 'required',
+
+
+        ]);
+
+        $vehiculo->marca = $request->marca;
+        $vehiculo->modelo = $request->modelo;
+        $vehiculo->año = $request->año;   
+        $vehiculo->color = $request->color;
+        $vehiculo->placa = $request->placa;
+        $vehiculo->tipo_conbustible = $request->tipo_conbustible;
+        $vehiculo->save();
+
+        return redirect()->route('admin.vehiculos.index')
+        ->with('mensaje','Se actualizo al Secretario Exitosamente')
+        ->with('icono','success');
+
+        /* Notificacion */
         $recipient = 'alvaradocami717@gmail.com';
         $name = 'Usuario';
     
@@ -101,13 +127,26 @@ class VehiculoController extends Controller
         return " enviado";
     }
 
+       
+    public function confirmDelete($id)
+    {
+        $vehiculo = Vehiculo::with('user')->findOrFail($id);
+        return view('admin.vehiculos.delete', compact('vehiculo'));
+    }
+    
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vehiculo $vehiculo)
+    public function destroy($id)
     {
-        //
-    }
-
+        $vehiculo = Vehiculo::find($id);
+    
+        // Eliminar el vehículo
+        $vehiculo->delete();
+    
+        return redirect()->route('admin.vehiculos.index')
+            ->with('mensaje', 'El vehículo se eliminó exitosamente')
+            ->with('icono', 'success');
+    }    
 
 }
