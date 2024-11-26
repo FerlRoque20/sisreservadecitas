@@ -76,11 +76,23 @@ class AreaController extends Controller
             ->with('icono','success');
     }
 
+    public function confirmdelete($id)
+    {
+        $area = Area::findOrFail($id);
+        return view('admin.areas.delete', compact('area'));
+    }
+
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Area $area)
+    public function destroy($id)
     {
-        //
+        $area = Area::find($id);
+        //Eliminar a la secretaria
+        $area->delete();
+
+        return redirect()->route('admin.areas.index')
+        ->with('mensaje','Se elimino el area Exitosamente')
+        ->with('icono','success');
     }
 }

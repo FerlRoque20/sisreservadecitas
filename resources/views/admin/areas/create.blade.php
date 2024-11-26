@@ -57,12 +57,10 @@
                     </div>
 
                     <div class="row">
-                                 
-                    
                         <div class="col-md-12">
                             <div class="from group">
                                 <label for="">Ubicacion</label> <b>*</b>
-                                <input type="address" value="{{old('ubicacion')}}" name="ubicacion" class="form-control">
+                                <input type="address" value="{{old('ubicacion')}}" name="ubicacion" class="form-control" required>
 
                                 @error('ubicacion')
                                 <small style="color:red">{{ $message }}</small>
@@ -73,7 +71,9 @@
                             
                             </div>
                         </div>
-                    
+                    </div>
+                    <br>
+
                         <div class="col-md-12">
                             <div class="from group">
                                 <a href="{{url('admin/areas')}}" class='btn btn-secondary'>Cancelar</a>
