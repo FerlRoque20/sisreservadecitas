@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('encargados', function (Blueprint $table) {
             $table->id();
             
-            $table->string('nombre',50);
-            $table->string('apellido',50);
+            $table->string('nombres',50);
+            $table->string('apellidos',50);
             $table->string('celular',50);
             $table->string('especialidad',50);
 

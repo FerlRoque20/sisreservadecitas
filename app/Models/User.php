@@ -48,4 +48,7 @@ class User extends Authenticatable
     public function vehiculos(){
         return $this->hasMany(Vehiculo::class);
     }
+    public function encargado(){
+        return $this->hasOne(Encargado::class);
+    }
 }
