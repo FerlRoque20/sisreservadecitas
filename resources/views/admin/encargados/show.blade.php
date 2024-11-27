@@ -17,7 +17,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">Nombres y apellidos</label>
-                                <p class="form-control-plaintext">{{$encargado->nombre}} {{$encargado->apellido}}</p>
+                                <p class="form-control-plaintext">{{$encargado->nombres}} {{$encargado->apellidos}}</p>
                             </div>
                         </div>
 

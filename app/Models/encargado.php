@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Encargado extends Model
 {
     use HasFactory;
-    protected $fillable = ['numero', 'apellido','telefono', 'especialidad'];
+    protected $fillable = ['nombres', 'apellidos','telefono', 'especialidad'];
 
     public function areas()
     {

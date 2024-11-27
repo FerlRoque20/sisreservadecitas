@@ -33,7 +33,7 @@
                     @foreach($encargados as $encargado)
                         <tr>
                             <td style = "text-align: center">{{ $contador++ }}</td>
-                            <td>{{ $encargado->nombre." ".$encargado->apellidos}}</td>
+                            <td>{{ $encargado->nombres." ".$encargado->apellidos}}</td>
                             <td>{{ $encargado->celular}}</td>
                             <td>{{ $encargado->especialidad}}</td>
                             <td>{{ $encargado->user->email}}</td>
