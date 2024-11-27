@@ -186,3 +186,29 @@ Route::get('/admin/encargados/{id}/confirm-delete', [App\Http\Controllers\Encarg
 
 //Rutas para el administrador Cliente - encargados - delete
 Route::delete('/admin/encargados/{id}', [App\Http\Controllers\EncargadoController::class, 'destroy'])->name('admin.encargados.destroy')->middleware('auth');
+
+
+
+//Rutas para el administrador Cliente - vehiculos
+Route::get('/admin/horarios', [App\Http\Controllers\HorarioController::class, 'index'])->name('admin.horarios.index')->middleware('auth');
+
+//Rutas para el administrador Cliente - horarios - create
+Route::get('/admin/horarios/create', [App\Http\Controllers\HorarioController::class, 'create'])->name('admin.horarios.create')->middleware('auth');
+
+//Rutas para el administrador Cliente  - horarios - store
+Route::post('/admin/horarios/create', [App\Http\Controllers\HorarioController::class, 'store'])->name('admin.horarios.store')->middleware('auth');
+
+//Rutas para el administrador Cliente - horarios - edit
+Route::get('/admin/horarios/{id}', [App\Http\Controllers\HorarioController::class, 'show'])->name('admin.horarios.show')->middleware('auth');
+
+//Rutas para el administrador Cliente - horarios - edit
+Route::get('/admin/horarios/{id}/edit', [App\Http\Controllers\HorarioController::class, 'edit'])->name('admin.horarios.edit')->middleware('auth');
+
+//Rutas para el administrador Cliente - horarios - edit - Actualizar Usuario
+Route::put('/admin/horarios/{id}', [App\Http\Controllers\HorarioController::class, 'update'])->name('admin.horarios.update')->middleware('auth');
+
+//Rutas para el administrador Cliente - horarios - Confirm-delete
+Route::get('/admin/horarios/{id}/confirm-delete', [App\Http\Controllers\HorarioController::class, 'confirmDelete'])->name('admin.horarios.confirmDelete')->middleware('auth');
+
+//Rutas para el administrador Cliente - horarios - delete
+Route::delete('/admin/horarios/{id}', [App\Http\Controllers\HorarioController::class, 'destroy'])->name('admin.horarios.destroy')->middleware('auth');
