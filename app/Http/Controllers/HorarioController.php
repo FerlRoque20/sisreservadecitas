@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\horario;
+use App\Models\Horario;
 use Illuminate\Http\Request;
 
 class HorarioController extends Controller
@@ -34,7 +34,7 @@ class HorarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(horario $horario)
+    public function show(Horario $horario)
     {
         //
     }
@@ -42,7 +42,7 @@ class HorarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(horario $horario)
+    public function edit(Horario $horario)
     {
         //
     }
@@ -50,7 +50,7 @@ class HorarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, horario $horario)
+    public function update(Request $request, Horario $horario)
     {
         //
     }
@@ -58,7 +58,7 @@ class HorarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(horario $horario)
+    public function destroy(Horario $horario)
     {
         //
     }

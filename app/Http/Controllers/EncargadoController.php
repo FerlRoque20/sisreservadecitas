@@ -6,7 +6,7 @@ use App\Models\Area;
 use App\Models\Horario;
 use App\Models\User;
 
-use App\Models\encargado;
+use App\Models\Encargado;
 use Illuminate\Http\Request;
 
 class EncargadoController extends Controller
