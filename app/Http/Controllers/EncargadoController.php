@@ -39,9 +39,10 @@ class EncargadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(encargado $encargado)
+    public function show($id)
     {
-        //
+        $encargado = Encargado::findOrFail($id);
+        return view('admin.encargados.show',compact('encargado'));
     }
 
     /**
@@ -63,8 +64,13 @@ class EncargadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function comfirDelete($id)
+    {
+        $encargado = Encargado::findOrFail($id);
+        return view('admin.encargados.show',compact('encargado'));
+    }
     public function destroy(encargado $encargado)
     {
-        //
+        
     }
 }
