@@ -13,6 +13,9 @@
                     <h3 class="card-title">¿Estas seguro de querer eliminar este registro?</h3>
                 </div>
                 <div class="card-body">
+                <form action="{{url('admin/encargados',$encargado->id)}}"  method="POST">
+                    @csrf
+                    @method('DELETE')
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -49,6 +52,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <a href="{{ url('admin/encargados') }}" class="btn btn-secondary">Volver</a>
+                            <button type='submit' class='btn btn-danger'>Eliminar</button>
                         </div>
                     </div>
                 </div>

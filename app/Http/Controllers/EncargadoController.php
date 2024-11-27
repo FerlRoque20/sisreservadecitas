@@ -125,13 +125,16 @@ class EncargadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function comfirDelete($id)
+    public function confirmdelete($id)
     {
         $encargado = Encargado::findOrFail($id);
-        return view('admin.encargados.show',compact('encargado'));
+        return view('admin.encargados.delete',compact('encargado'));
     }
-    public function destroy(encargado $encargado)
+    public function destroy($id)
     {
-        
+        Encargado::destroy($id);
+        return redirect()->route('admin.encargados.index')
+            ->with('mensaje','El encargado ha sido eliminado correctamente. ')
+            ->with('icono','success');
     }
 }
