@@ -8,6 +8,8 @@ use App\Models\User;
 
 use App\Models\Encargado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class EncargadoController extends Controller
 {
@@ -25,7 +27,7 @@ class EncargadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.encargados.create');
     }
 
     /**
@@ -33,7 +35,35 @@ class EncargadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$datos = request()->all();
+        //return response()->json($datos);
+        $request->validate([
+            'nombres' => 'required',
+            'apellidos' => 'required',
+            'celular' => 'required',
+            'especialidad' => 'required',
+            'email'=>'required|max:50|unique:users',
+            'password'=>'required|max:250|confirmed',
+
+        ]);
+
+        $usuario = new User();
+        $usuario->name = $request->nombres;
+        $usuario->email = $request->email;
+        $usuario-> password = Hash::make($request['password']);
+        $usuario-> save();
+
+        $encargado = new Encargado();
+        $encargado->user_id = $usuario->id;
+        $encargado->nombres = $request->nombres;
+        $encargado->apellidos = $request->apellidos;
+        $encargado->celular = $request->celular;
+        $encargado->especialidad = $request->especialidad;
+        $encargado->save();
+
+        return redirect()->route('admin.encargados.index')
+        ->with('mensaje','Se registro al Encargado Exitosamente')
+        ->with('icono','success');
     }
 
     /**
