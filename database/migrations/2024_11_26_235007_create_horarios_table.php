@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('dia');
-            $table->date('fecha_inicio');
-            $table->date('fecha_fin');
+            $table->time('hora_inicio');
+            $table->time('hora_fin');
             
             $table->foreignId('encargado_id')->constrained('encargados')->onDelete('cascade');
             $table->foreignId('area_id')->constrained('areas')->onDelete('cascade');

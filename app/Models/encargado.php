@@ -11,7 +11,7 @@ class Encargado extends Model
     use HasFactory;
     protected $fillable = ['nombres', 'apellidos','telefono', 'especialidad'];
 
-    public function areas()
+    public function area()
     {
         return $this->belongsTo(Area::class);
     }

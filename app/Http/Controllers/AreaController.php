@@ -35,7 +35,7 @@ class AreaController extends Controller
             'ubicacion' => 'required',
         ]);
 
-        Area::create($request->only(['celular', 'disponibilidad', 'especialidad', 'ubicacion']));
+        Area::create($request->all());
 
         return redirect()->route('admin.areas.index')
             ->with('mensaje', 'Se registró el área exitosamente')

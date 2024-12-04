@@ -212,3 +212,6 @@ Route::get('/admin/horarios/{id}/confirm-delete', [App\Http\Controllers\HorarioC
 
 //Rutas para el administrador Cliente - horarios - delete
 Route::delete('/admin/horarios/{id}', [App\Http\Controllers\HorarioController::class, 'destroy'])->name('admin.horarios.destroy')->middleware('auth');
+
+//Rutas para el administrador Cliente - areas - Ajax
+Route::get('/admin/horarios/areas/{id}', [App\Http\Controllers\HorarioController::class, 'cargar_datos_areas'])->name('admin.horarios.cargar_datos_areas')->middleware('auth');
