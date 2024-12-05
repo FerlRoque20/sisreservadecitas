@@ -56,11 +56,13 @@ class HorarioController extends Controller
         $request->validate([
             'dia' => 'required',
             'hora_inicio' => 'required|date_format:H:i',
-            'hora_fin' => 'required|date_format:H:i|after:hora_inicio',  
+            'hora_fin' => 'required|date_format:H:i|after:hora_inicio', 
+            'area_id' => 'required|exists:areas,id', // Validar que el consultorio exista 
         ]);
 
         //verificar si el horario ya existe para ese dia y rango de horas 
         $horarioExistente = Horario::where('dia', $request->dia)
+        ->where('area_id', $request->area_id) 
         ->where(function ($query) use ($request) {
             $query->where(function ($query) use ($request) {
                 $query->where('hora_inicio', '>=', $request->hora_inicio)

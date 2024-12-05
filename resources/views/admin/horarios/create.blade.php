@@ -20,6 +20,43 @@
                             <form action="{{ url('/admin/horarios/create') }}" class="needs-validation" novalidate method="POST">
                                 @csrf
                                 <div class="row">
+
+                                <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="area_id">Área</label>
+                                            <select name="area_id" id="area_select" class="form-control">
+                                                <option value="" disabled="">Seleccionar Area</option>
+                                                @foreach($areas as $area)
+                                                    <option value="{{$area->id}}">{{$area->ubicacion . " - " . $area->especialidad}}</option>
+                                                @endforeach
+                                            </select>   
+
+                                            <script>
+                                                $('#area_select').on('change',function () {
+                                                    var area_id = $('#area_select').val();
+                                                    //alert(area_id);
+                                                    var url = "{{route('admin.horarios.cargar_datos_areas',':id')}}";
+                                                    url = url.replace(':id',area_id);
+                                                    if(area_id){
+                                                        $.ajax({
+                                                            url: url,
+                                                            type: 'GET',
+                                                            success: function (data) {
+                                                                $('#area_info').html(data);
+                                                            },
+                                                            error: function () {
+                                                                alert('Error al obtener los datos del consultorio'); 
+                                                            }
+                                                        });
+                                                    }else{
+                                                        $('#area_info').html('');
+                                                    }
+                                                });
+                                            </script>
+
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="encargado_id">Encargados</label>
@@ -31,16 +68,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="area_id">Área</label>
-                                            <select name="area_id" class="form-control">
-                                                @foreach($areas as $area)
-                                                    <option value="{{$area->id}}">{{$area->especialidad . " - " . $area->ubicacion}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    
 
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -89,52 +117,9 @@
 
                         <!-- Tabla con el horario a la derecha -->
                         <div class="col-md-9 order-md-last">
-                            <table style="font-size: 13px; text-align: center" class="table table-striped table-hover table-sm table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>HORA</th>
-                                        <th>LUNES</th>
-                                        <th>MARTES</th>
-                                        <th>MIERCOLES</th>
-                                        <th>JUEVES</th>
-                                        <th>VIERNES</th>
-                                        <th>SABADO</th>
-                                        <th>DOMINGO</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                    $horas = ['08:00:00 - 09:00:00', '09:00:00 - 10:00:00', '10:00:00 - 11:00:00',
-                                            '11:00:00 - 12:00:00', '12:00:00 - 13:00:00', '13:00:00 - 14:00:00',
-                                            '14:00:00 - 15:00:00', '15:00:00 - 16:00:00', '16:00:00 - 17:00:00',
-                                            '17:00:00 - 18:00:00', '18:00:00 - 19:00:00'];
+                            <div id="area_info">
 
-                                    $diasSemana = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO'];
-                                    @endphp
-                                    @foreach ($horas as $hora)
-                                        @php
-                                        list($hora_inicio,$hora_fin) = explode(' - ',$hora);
-                                        @endphp
-                                        <tr>
-                                            <td>{{$hora}}</td>
-                                            @foreach($diasSemana as $dia)
-                                                @php
-                                                $nombre_encargado = '';
-                                                foreach ($horarios as $horario){
-                                                    if(strtoupper($horario->dia) == $dia &&
-                                                    $hora_inicio >= $horario->hora_inicio &&
-                                                    $hora_fin <= $horario->hora_fin ){
-                                                    $nombre_encargado = $horario->encargado->nombres." ".$horario->encargado->apellidos;
-                                                    break;
-                                                    }
-                                                }
-                                                @endphp
-                                                <td>{{$nombre_encargado}}</td>
-                                            @endforeach
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            </div> 
                         </div>
                     </div>
                 </div>

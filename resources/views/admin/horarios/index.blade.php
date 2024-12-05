@@ -65,21 +65,22 @@
                     <div class="col-md-12">
                         <div class="card card-outline card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">CALENDARIO DE ATENCION DE ENCARGADOS</h3>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3 class="card-title">CALENDARIO DE ATENCION DE ENCARGADOS</h3>
+                                        </div>
+<br>
+                                        <div class="col-md-12">
+                                            <label for="area_id">AREAS DISPONIBLES</label>
+                                                <select name="area_id" id="area_select" class="form-control">
+                                                    @foreach($areas as $area)
+                                                        <option value="{{$area->id}}">{{$area->ubicacion . " - " . $area->especialidad}}</option>
+                                                    @endforeach
+                                                </select>   
+                                        </div>
+                                    </div>
                             </div>
                             <div class="card-body">
-
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label for="area_id">Área</label>
-                                            <select name="area_id" id="area_select" class="form-control">
-                                                @foreach($areas as $area)
-                                                    <option value="{{$area->id}}">{{$area->especialidad . " - " . $area->ubicacion}}</option>
-                                                @endforeach
-                                            </select>
-                                    </div>
-                                </div>
-
                                 <script>
                                     $('#area_select').on('change',function () {
                                         var area_id = $('#area_select').val();
