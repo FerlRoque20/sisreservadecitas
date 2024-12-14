@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -121,13 +123,14 @@ Route::get('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'sh
 Route::get('/admin/areas/{id}/edit', [App\Http\Controllers\AreaController::class, 'edit'])->name('admin.areas.edit')->middleware('auth');
 
 //Rutas para el administrador - areas - edit - Actualizar Usuario
-Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areas')->middleware('auth');
+Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areas.update')->middleware('auth');
 
 //Rutas para el administrador - areas - Confirm-delete
 Route::get('/admin/areas/{id}/confirm-delete', [App\Http\Controllers\AreaController::class, 'confirmDelete'])->name('admin.areas.confirmDelete')->middleware('auth');
 
 //Rutas para el administrador - areas - delete
 Route::delete('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'destroy'])->name('admin.areas.destroy')->middleware('auth');
+
 
 
 //Rutas para el administrador Cliente - vehiculos
@@ -153,6 +156,7 @@ Route::get('/admin/vehiculos/{id}/confirm-delete', [App\Http\Controllers\Vehicul
 
 //Rutas para el administrador Cliente - vehiculos - delete
 Route::delete('/admin/vehiculos/{id}', [App\Http\Controllers\VehiculoController::class, 'destroy'])->name('admin.vehiculos.destroy')->middleware('auth');
+
 
 //Rutas para el administrador Cliente - vehiculos - delete
 Route::get('/admin/vehiculos_', [App\Http\Controllers\VehiculoController::class, 'update'])->name('admin.vehiculos.update')->middleware('auth');

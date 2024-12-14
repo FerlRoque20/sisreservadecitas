@@ -162,7 +162,7 @@
         </form>
 <br>
       
-          <a href="register.html" class="text-center">Registra una nueva cuenta</a>
+          <a href="{{ route('register') }}" class="text-center">Registra una nueva cuenta</a>
         </p>
       </div>
       <!-- /.card-body -->
