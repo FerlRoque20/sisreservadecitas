@@ -28,6 +28,9 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- jQuery -->
+  <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
+
   <!-- =======================================================
   * Template Name: Medilab
   * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
@@ -123,7 +126,7 @@
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
               <h3>Reserva tu cita</h3>
               <div class="text-center">
-                <a href="#about" class="more-btn"><span>Recervar ahora</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="{{url('/admin')}}" class="more-btn"><span>Recervar ahora</span> <i class="bi bi-chevron-right"></i></a>
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -164,6 +167,66 @@
       </div>
 
     </section><!-- /Hero Section -->
+    
+    <br>
+    <br>
+    
+    <div class="container">
+    <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-outline card-primary">
+                            <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3 class="card-title">CALENDARIO DE ATENCION DE ENCARGADOS</h3>
+                                        </div>
+<br>
+                                        <div class="col-md-12">
+                                            <label for="area_id">AREAS DISPONIBLES</label>
+<hr>
+                                                <select name="area_id" id="area_select" class="form-control">
+                                                    <option value="">Seleccione un Area...</option>
+                                                    @foreach($areas as $area)
+                                                        <option value="{{$area->id}}">{{$area->ubicacion . " - " . $area->especialidad}}</option>
+                                                    @endforeach
+                                                </select>   
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="card-body">
+                                <script>
+                                    $('#area_select').on('change',function () {
+                                        var area_id = $('#area_select').val();
+                                        //alert(area_id);
+                                        
+
+                                        if(area_id){
+                                            $.ajax({
+                                              url: "{{url('/areas/')}}" + '/' + area_id,
+                                              type: 'GET',
+                                                success: function (data) {
+                                                    $('#area_info').html(data);
+                                                },
+                                                error: function () {
+                                                    alert('Error al obtener los datos del consultorio'); 
+                                                }
+                                            });
+                                        }else{
+                                            $('#area_info').html('');
+                                        }
+                                    });
+                                </script>
+                                <div id="area_info">
+
+                                </div>      
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
 
     <!-- About Section -->
     <section id="about" class="about section">

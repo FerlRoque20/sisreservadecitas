@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- jQuery -->
-<script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
+  <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
   
   <!-- Alertas de sweetaler -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

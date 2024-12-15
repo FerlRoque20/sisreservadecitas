@@ -61,6 +61,8 @@ class EncargadoController extends Controller
         $encargado->especialidad = $request->especialidad;
         $encargado->save();
 
+        $usuario->assignRole('encargado');
+
         return redirect()->route('admin.encargados.index')
         ->with('mensaje','Se registro al Encargado Exitosamente')
         ->with('icono','success');

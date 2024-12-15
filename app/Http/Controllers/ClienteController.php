@@ -106,6 +106,8 @@ class ClienteController extends Controller
         $cliente->direccion = $request->direccion;
         $cliente->save();
 
+        
+
         return redirect()->route('admin.clientes.index')
             ->with('mensaje','Se actualizo al Cliente Exitosamente')
             ->with('icono','success');

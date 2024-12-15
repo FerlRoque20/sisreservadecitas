@@ -25,7 +25,7 @@
                                         <div class="form-group">
                                             <label for="area_id">Área</label>
                                             <select name="area_id" id="area_select" class="form-control">
-                                                <option value="" disabled="">Seleccionar Area</option>
+                                                <option value="">Seleccionar Area</option>
                                                 @foreach($areas as $area)
                                                     <option value="{{$area->id}}">{{$area->ubicacion . " - " . $area->especialidad}}</option>
                                                 @endforeach
@@ -35,11 +35,10 @@
                                                 $('#area_select').on('change',function () {
                                                     var area_id = $('#area_select').val();
                                                     //alert(area_id);
-                                                    var url = "{{route('admin.horarios.cargar_datos_areas',':id')}}";
-                                                    url = url.replace(':id',area_id);
+                                                    
                                                     if(area_id){
                                                         $.ajax({
-                                                            url: url,
+                                                            url: "{{url('/admin/horarios/areas/')}}" + '/' + area_id,
                                                             type: 'GET',
                                                             success: function (data) {
                                                                 $('#area_info').html(data);

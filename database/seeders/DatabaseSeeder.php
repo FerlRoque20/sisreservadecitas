@@ -7,8 +7,11 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use App\Models\Secretaria;
+use App\Models\Encargado;
+use App\Models\Area;
 
 
 class DatabaseSeeder extends Seeder
@@ -25,127 +28,114 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        ///seeder para los roles y permisos admin,secretarios, encargado, clientes, usuarios
-        $admin = Role::create(['name'=>'admin']);
-        $secretaria = Role::create(['name'=>'secretaria']);
-        $encargado = Role::create(['name'=>'encargado']);
-        $cliente = Role::create(['name'=>'cliente']);
-        $usuario = Role::create(['name'=>'usuario']);
-
-        
-        Permission::create(['name'=>'admin.index']);
+        $this->call([RoleSeeder::class,]);
 
 
-        //rutas para el admin - usuarios
-        Permission::create(['name'=>'admin.usuarios.index'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.create'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.store'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.show'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.edit'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.update'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.confirmDelete'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.usuarios.destroy'])->syncRoles([$admin]);
-
-
-        //Rutas para el administrador - Secretarias
-        Permission::create(['name'=>'admin.secretarias.index'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.create'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.store'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.show'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.edit'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.update'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.confirmDelete'])->syncRoles([$admin]);
-        Permission::create(['name'=>'admin.secretarias.destroy'])->syncRoles([$admin]);
-
-
-        //Rutas para el administrador - clientes
-        Permission::create(['name'=>'admin.clientes.index'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.create'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.store'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.show'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.edit'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.update'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.confirmDelete'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.clientes.destroy'])->syncRoles([$admin,$secretaria]);
-
-
-        //Rutas para el administrador - areas
-        Permission::create(['name'=>'admin.areas.index'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.create'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.store'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.show'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.edit'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.update'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.confirmDelete'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.areas.destroy'])->syncRoles([$admin,$secretaria]);
-
-
-        //Rutas para el administrador Cliente - vehiculos
-        Permission::create(['name'=>'admin.vehiculos.index'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.create'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.store'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.show'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.edit'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.update'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.confirmDelete'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.vehiculos.destroy'])->syncRoles([$admin,$secretaria]);
-
-
-        //Rutas para el administrador Cliente - encargados
-        Permission::create(['name'=>'admin.encargados.index'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.create'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.store'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.show'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.edit'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.update'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.confirmDelete'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.encargados.destroy'])->syncRoles([$admin,$secretaria]);
-
-
-        //Rutas para el administrador Cliente - horarios
-        Permission::create(['name'=>'admin.horarios.index'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.create'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.store'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.show'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.edit'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.update'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.confirmDelete'])->syncRoles([$admin,$secretaria]);
-        Permission::create(['name'=>'admin.horarios.destroy'])->syncRoles([$admin,$secretaria]);
-
-        //Rutas para el administrador Cliente - areas - Ajax
-        Permission::create(['name'=>'admin.horarios.cargar_datos_areas'])->syncRoles([$admin,$secretaria]);
-
-
+        //ADMINISTRADOR
         User::create([
             'name'=>'Administrador',
             'email'=>'administrador@gmail.com',
             'password'=>hash::make('123456789')
         ])->assignRole('admin');
 
+        //SECRETARIO
         User::create([
             'name'=>'Secretario',
             'email'=>'secretario@gmail.com',
             'password'=>hash::make('123456789')
         ])->assignRole('secretaria');
 
+        Secretaria::create([
+            'nombres' => 'Secretaria',
+            'apellidos' => 'secretario',
+            'dni' => '78546321',
+            'celular' => '977777777',
+            'fecha_nacimiento' => '10/10/2001',
+            'direccion' => 'Calle Salsa Nora',
+            'user_id' => '2'
+        ]);
+
+        //ADMINISTRADOR CORREO
         User::create([
             'name'=>'Administrador',
             'email'=>'logicainformatica18@gmail.com',
             'password'=>hash::make('123456789')
         ]);
 
+        //ENCARGADO
         User::create([
             'name'=>'Mecanico1',
             'email'=>'mecanico1@gmail.com',
             'password'=>hash::make('123456789')
         ])->assignRole('encargado');
 
+        Encargado::create([
+            'nombres' => 'Mecanico1',
+            'apellidos' => 'Torres',
+            'celular' => '963587024',
+            'especialidad' => 'Tecnico Automotriz',
+            'user_id' => '3'
+        ]);
+
+        User::create([
+            'name'=>'Mecanico2',
+            'email'=>'mecanico2@gmail.com',
+            'password'=>hash::make('123456789')
+        ])->assignRole('encargado');
+
+
+        Encargado::create([
+            'nombres' => 'Mecanico2',
+            'apellidos' => 'Lujan',
+            'celular' => '963587034',
+            'especialidad' => 'Tecnico Automotriz',
+            'user_id' => '4'
+        ]);
+
+        User::create([
+            'name'=>'Mecanico3',
+            'email'=>'mecanico3@gmail.com',
+            'password'=>hash::make('123456789')
+        ])->assignRole('encargado');
+
+        Encargado::create([
+            'nombres' => 'Mecanico3',
+            'apellidos' => 'Marin',
+            'celular' => '963585034',
+            'especialidad' => 'Tecnico Automotriz',
+            'user_id' => '5'
+        ]);
+
+        //AREA
+        Area::create([
+            'celular' => '945394391',
+            'disponibilidad' => 'Disponible',
+            'especialidad' => 'Tecnico Automotriz',
+            'ubicacion' => '1ra FILA',
+        ]);
+        
+        Area::create([
+            'celular' => '945394891',
+            'disponibilidad' => 'Disponible',
+            'especialidad' => 'Tecnico Automotriz',
+            'ubicacion' => '2da FILA',
+        ]);
+
+        Area::create([
+            'celular' => '945304391',
+            'disponibilidad' => 'Disponible',
+            'especialidad' => 'Tecnico Automotriz',
+            'ubicacion' => '3ra FILA',
+        ]);
+
+        //CLIENTE
         User::create([
             'name'=>'Cliente1',
             'email'=>'cliente1@gmail.com',
             'password'=>hash::make('123456789')
         ])->assignRole('cliente');
 
+        //USUARIO
         User::create([
             'name'=>'Usuario1',
             'email'=>'usuario1@gmail.com',
