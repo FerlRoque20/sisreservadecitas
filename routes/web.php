@@ -20,7 +20,9 @@ Route::get('/', [App\Http\Controllers\WebController::class, 'index'])->name('ind
 //Rutas para el Pagina WEB Cliente - areas - Ajax
 Route::get('/areas/{id}', [App\Http\Controllers\WebController::class, 'cargar_datos_areas'])->name('cargar_datos_areas');
 Route::get('/cargar_reserva_encargados/{id}', [App\Http\Controllers\WebController::class, 'cargar_reserva_encargados'])->name('cargar_reserva_encargados');
+Route::get('/admin/ver_reservas/{id}', [App\Http\Controllers\AdminController::class, 'ver_reservas'])->name('ver_reservas');
 Route::post('/admin/eventos/create', [App\Http\Controllers\EventController::class, 'store'])->name('admin.eventos.create');
+Route::delete('/admin/eventos/destroy/{id}', [App\Http\Controllers\EventController::class, 'destroy'])->name('admin.eventos.destroy');
 
 
 Auth::routes();

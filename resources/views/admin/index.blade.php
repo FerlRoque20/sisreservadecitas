@@ -214,11 +214,11 @@
 
             <div class="card-body">
                 <div class="row">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-right: 20px; margin-top: 10px;" data-target="#exampleModal">
                         Reserva tu cita Con ADS MOTORS
                     </button>
 
-                    <a href="" class="btn btn-success"> <i class="bi bi-calendar-check"></i> Ver Reservas</a>
+                    <a href="{{url('/admin/ver_reservas',Auth::user()->id)}}" class="btn btn-success" style="margin-top: 10px;"> <i class="bi bi-calendar-check"></i> Ver Reservas</a>
 
                     <form action="{{url('/admin/eventos/create')}}" method="post">
                         @csrf
