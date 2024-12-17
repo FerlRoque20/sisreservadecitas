@@ -10,6 +10,7 @@ use App\Models\Vehiculo;
 use App\Models\Area;
 use App\Models\Encargado;
 use App\Models\Horario;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 
@@ -25,6 +26,20 @@ class AdminController extends Controller
         $total_encargados = Encargado::count();
         $total_horarios = Horario::count();
 
-        return view('admin.index',compact('total_usuarios', 'total_secretarias', 'total_clientes', 'total_vehiculos', 'total_areas', 'total_encargados','total_horarios'));
+        $areas = Area::all();
+        $encargados = Encargado::all();
+        $eventos = Event::all();
+
+        return view('admin.index',compact('total_usuarios', 
+        'total_secretarias', 
+        'total_clientes', 
+        'total_vehiculos', 
+        'total_areas', 
+        'total_encargados',
+        'total_horarios',
+        'areas',
+        'encargados',
+        'eventos'
+        ));
     }
 }

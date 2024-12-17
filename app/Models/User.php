@@ -56,4 +56,7 @@ class User extends Authenticatable
     public function encargado(){
         return $this->hasOne(Encargado::class);
     }
+    public function events(){
+        return $this->hasMany(Event::class);
+    }
 }
