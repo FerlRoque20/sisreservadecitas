@@ -49,7 +49,7 @@
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-geo-alt d-flex align-items-center"><a href="https://www.google.com/maps/place/ADS+Motors+-+Taller+Automotriz/@-18.0025402,-70.2568532,17z/data=!4m15!1m8!3m7!1s0x915acf8a875cb921:0x1e5c2adf72fce6a9!2sADS+Motors+-+Taller+Automotriz!8m2!3d-18.0025453!4d-70.2542783!10e1!16s%2Fg%2F11k2z2sd34!3m5!1s0x915acf8a875cb921:0x1e5c2adf72fce6a9!8m2!3d-18.0025453!4d-70.2542783!16s%2Fg%2F11k2z2sd34?entry=ttu&g_ep=EgoyMDI0MTIwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
           Av. Patricio Melendez N. 1261 - Tacna</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+51 972672732</span></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+51 972672732 - 984280652</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="https://www.tiktok.com/@ads.motors" class="twitter"><i class="bi bi-tiktok"></i></a>
@@ -75,26 +75,7 @@
             <li><a href="#about">Acerca de</a></li>
             <li><a href="#services">Servicios</a></li>
             <li><a href="#departments">Departamentos</a></li>
-            <li><a href="#doctors">Doctors</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+            
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
@@ -126,7 +107,10 @@
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
               <h3>Reserva tu cita</h3>
               <div class="text-center">
-                <a href="{{url('/admin')}}" class="more-btn"><span>Recervar ahora</span> <i class="bi bi-chevron-right"></i></a>
+                <!-- Aplicando estilo en línea con fondo negro transparente y texto blanco -->
+                <a href="{{url('/admin')}}" class="more-btn" style="display: inline-flex; align-items: center; padding: 10px 20px; background-color: rgba(0, 0, 0, 0.5); color: white; border-radius: 5px; text-decoration: none; font-size: 16px; transition: background-color 0.3s, transform 0.3s;">
+                  <span>Reservar ahora</span> <i class="bi bi-chevron-right"></i>
+                </a>
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -137,31 +121,32 @@
 
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
-                    <i class="bi bi-clipboard-data"></i>
-                    <h4>Corporis voluptates officia eiusmod</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <i class="bi bi-wrench"></i> <!-- Icono actualizado -->
+                    <h4>Mantenimiento General de Vehículos</h4>
+                    <p>Ofrecemos mantenimiento integral para tu vehículo: desde revisiones de motor hasta servicios de frenos, suspensión y más.</p>
                   </div>
                 </div><!-- End Icon Box -->
 
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
-                    <i class="bi bi-gem"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <i class="bi bi-car-front"></i> <!-- Icono actualizado -->
+                    <h4>Alineación y Balanceo</h4>
+                    <p>Mejoramos la estabilidad de tu vehículo mediante una alineación y balanceo computarizado para garantizar una conducción segura.</p>
                   </div>
                 </div><!-- End Icon Box -->
 
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
-                    <i class="bi bi-inboxes"></i>
-                    <h4>Labore consequatur incidid dolore</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <i class="bi bi-gear"></i> <!-- Icono actualizado -->
+                    <h4>Reparación de Motor y Transmisión</h4>
+                    <p>Brindamos diagnósticos y reparaciones precisas para motores y transmisiones, asegurando el mejor rendimiento de tu vehículo.</p>
                   </div>
                 </div><!-- End Icon Box -->
 
               </div>
             </div>
           </div>
+
         </div><!-- End  Content-->
 
       </div>
@@ -236,8 +221,8 @@
         <div class="row gy-4 gx-5">
 
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.tiktok.com/@ads.motors/video/7410117363992907013" class="glightbox pulsating-play-btn"></a>
+            <img src="assets/img/about.jpeg" class="img-fluid" alt="">
+            <a href="https://web.facebook.com/watch/?v=837140671612895" class="glightbox pulsating-play-btn"></a>
           </div>
 
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
@@ -247,24 +232,24 @@
             </p>
             <ul>
               <li>
-                <i class="fa-solid fa-vial-circle-check"></i>
+                <i class="bi bi-ev-front"></i>
                 <div>
-                  <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                  <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                  <h5>"Tu auto merece lo mejor. ¡Dale el cuidado que necesita con nosotros!"</h5>
+                  <p>"¿Problemas con tu coche? Déjanos ayudarte a volver a la carretera en un abrir y cerrar de ojos."</p>
                 </div>
               </li>
               <li>
-                <i class="fa-solid fa-pump-medical"></i>
+                <i class="bi bi-person-workspace"></i>
                 <div>
-                  <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                  <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                  <h5>"Nos apasiona tu coche tanto como a ti. Ven y descubre un servicio de calidad que se nota."</h5>
+                  <p>"¿Tu coche está dando señales de alarma? ¡Actúa ahora y ahorra en reparaciones a largo plazo!"</p>
                 </div>
               </li>
               <li>
-                <i class="fa-solid fa-heart-circle-xmark"></i>
+                <i class="bi bi-car-front"></i>
                 <div>
-                  <h5>Voluptatem et qui exercitationem</h5>
-                  <p>Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime veniam</p>
+                  <h5>"¿A tu coche le hace falta un cuidado extra? Te ofrecemos el mantenimiento preventivo que tu vehículo necesita."</h5>
+                  <p>"Te garantizamos un servicio rápido sin comprometer la calidad. ¡Vuelve a disfrutar de tu vehículo al 100%!"</p>
                 </div>
               </li>
             </ul>
@@ -276,212 +261,167 @@
 
     </section><!-- /About Section -->
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="fa-solid fa-user-doctor"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Doctors</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="fa-regular fa-hospital"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Departments</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="fas fa-flask"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Research Labs</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="fas fa-award"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Awards</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>Servicios</h2>
+  <p>¿Necesitas mantenimiento o reparación de tu vehículo? ¡Estamos listos para ofrecerte el mejor servicio y solución en el menor tiempo posible!</p>
+</div><!-- End Section Title -->
 
-      <div class="container">
+<div class="container">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="fas fa-heartbeat"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fas fa-pills"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fas fa-hospital-user"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fas fa-dna"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fas fa-wheelchair"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fas fa-notes-medical"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
+  <div class="row gy-4">
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-tools"></i>
         </div>
-
+        <a href="#" class="stretched-link">
+          <h3>Mantenimiento Completo de Vehículos</h3>
+        </a>
+        <p>Brindamos un servicio integral para mantener tu vehículo en óptimas condiciones, revisando motor, frenos, suspensión y más.</p>
       </div>
+    </div><!-- End Service Item -->
 
-    </section><!-- /Services Section -->
-
-    <!-- Appointment Section -->
-    <section id="appointment" class="appointment section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Appointment</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-            </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-            </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 form-group mt-3">
-              <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required="">
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select" required="">
-                <option value="">Select Department</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-              </select>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select" required="">
-                <option value="">Select Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-          </div>
-          <div class="mt-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            <div class="text-center"><button type="submit">Make an Appointment</button></div>
-          </div>
-        </form>
-
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-align-left"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Alineamiento Computarizado 3D</h3>
+        </a>
+        <p>Te ayudamos a corregir el ángulo de las ruedas para mejorar la estabilidad, el rendimiento de tus llantas y evitar el desgaste irregular.</p>
       </div>
+    </div><!-- End Service Item -->
 
-    </section><!-- /Appointment Section -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Balanceo Computarizado</h3>
+        </a>
+        <p>Asegúrate de que tus llantas estén equilibradas correctamente para una conducción más suave y segura.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-car-crash"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Mantenimiento de Frenos</h3>
+        </a>
+        <p>Garantiza la seguridad de tu vehículo con un sistema de frenos en perfecto estado. Realizamos inspección y reemplazo de piezas cuando sea necesario.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-gas-pump"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Limpieza de Inyectores</h3>
+        </a>
+        <p>Mejora la eficiencia de tu motor y reduce el consumo de combustible con un servicio de limpieza de inyectores.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Rectificado de Disco y Tambor</h3>
+        </a>
+        <p>Restauramos la superficie de los discos y tambores para asegurar un rendimiento óptimo del sistema de frenos.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-oil-can"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Cambio de Aceite</h3>
+        </a>
+        <p>El cambio de aceite es fundamental para la vida útil de tu motor. Realizamos un servicio rápido y eficiente con los mejores productos.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Mantenimiento Preventivo y Correlativo</h3>
+        </a>
+        <p>Programamos mantenimientos periódicos para garantizar el buen estado de tu vehículo, reduciendo riesgos de fallas mayores.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-tachometer-alt"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Afinamiento de Motor</h3>
+        </a>
+        <p>Mejoramos el rendimiento de tu motor con ajustes precisos para que tu vehículo funcione de manera eficiente y sin pérdidas de potencia.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1000">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-snowflake"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Recarga de Aire Acondicionado</h3>
+        </a>
+        <p>Te ofrecemos un servicio completo de recarga de aire acondicionado para que disfrutes de un viaje cómodo durante todo el año.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1100">
+      <div class="service-item position-relative">
+        <div class="icon">
+          <i class="fas fa-wrench"></i>
+        </div>
+        <a href="#" class="stretched-link">
+          <h3>Mecánica en General</h3>
+        </a>
+        <p>Solucionamos todo tipo de problemas mecánicos en tu vehículo. Desde reparaciones menores hasta trabajos más complejos.</p>
+      </div>
+    </div><!-- End Service Item -->
+
+  </div>
+
+</div>
+
+</section><!-- /Services Section -->
+
+
 
     <!-- Departments Section -->
     <section id="departments" class="departments section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Departments</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Sucursales</h2>
+        <p>Agenda tu cita hoy mismo y da el primer paso hacia un auto más seguro y eficiente.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -490,19 +430,13 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Cardiology</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">SUCURSAL-01</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">Neurology</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">SUCURSAL-02</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Hepatology</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Pediatrics</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5">Eye Care</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">SUCURSAL-03</a>
               </li>
             </ul>
           </div>
@@ -511,62 +445,44 @@
               <div class="tab-pane active show" id="departments-tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Cardiology</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    <h3>Sucursal-01-TACNA/PERU</h3>
+                    <p class="fst-italic">ubicacion: AV. Patricio Melendez 1261 - Tacna</p>
+                    <p class="fst-italic">Numero de celular: 972672732</p>
                     <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/departments-1.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
               <div class="tab-pane" id="departments-tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    <h3>Sucursal-02-TACNA/PERU</h3>
+                    <p class="fst-italic">ubicacion: AV. Jorgue Basadre Grohoman</p>
+                    <p class="fst-italic">Mz. C. Lt. 12 - Alto de la Alianza - Tacna</p>
+                    <p class="fst-italic">Numero de celular: 952528092</p>
                     <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/departments-2.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
               <div class="tab-pane" id="departments-tab-3">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
+                    <h3>Sucursal-03-MOQUEGUA/PERU</h3>
+                    <p class="fst-italic">ubicacion: AV. Manuel C. de la Torre 134 - Moquegua</p>
+                    <p class="fst-italic">Numero de telefono: 053-479233</p>
                     <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/departments-3.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="departments-tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="departments-tab-5">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -576,92 +492,7 @@
 
     </section><!-- /Departments Section -->
 
-    <!-- Doctors Section -->
-    <section id="doctors" class="doctors section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Doctors</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Medical Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Anesthesiologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>Cardiology</span>
-                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Neurosurgeon</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Doctors Section -->
+    
 
     <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
@@ -984,78 +815,12 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Contactanos</h2>
+        <p>¿A tu coche le hace falta un cuidado extra? Te ofrecemos el mantenimiento preventivo que tu vehículo necesita.</p>
       </div><!-- End Section Title -->
 
       <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-      <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.4880476700596!2d-70.2568532254484!3d-18.002540181192604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915acf8a875cb921%3A0x1e5c2adf72fce6a9!2sADS%20Motors%20-%20Taller%20Automotriz!5e0!3m2!1ses!2spe!4v1733936819793!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div><!-- End Google Maps -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Ubicación</h3>
-                <p>Av. Patricio Melendez N. 1261 - Tacna</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Llamanos</h3>
-                <p>+51 972672732</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Envíenos un correo electrónico</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Su nombre" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Su Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Sujeto" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Cargando</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
-
-                  <button type="submit">Enviar mensaje</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
+        <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.4880476700596!2d-70.2568532254484!3d-18.002540181192604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915acf8a875cb921%3A0x1e5c2adf72fce6a9!2sADS%20Motors%20-%20Taller%20Automotriz!5e0!3m2!1ses!2spe!4v1733936819793!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div><!-- End Google Maps -->
       </div>
 
     </section><!-- /Contact Section -->
@@ -1085,62 +850,55 @@
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Servicios de ADS MOTORS</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Mantenimiento Completo de Vehiculos</a></li>
+            <li><a href="#">Aliniamiento Computarizado 3D</a></li>
+            <li><a href="#">Balanceo Computarizado</a></li>
+            <li><a href="#">Mantenimiento de Frenos</a></li>
+            <li><a href="#">Limpieza de Inyectores</a></li>
+            <li><a href="#">Rectificado de Disco y Tambor</a></li>
+
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+        <h4>Servicios de ADS MOTORS</h4>
+        <ul>
+            <li><a href="#">Cambio de Aceite</a></li>
+            <li><a href="#">Mantenimiento Preventivo Y Correlativo</a></li>
+            <li><a href="#">Afinamiento de Motor</a></li>
+            <li><a href="#">Escaneo Electronico</a></li>
+            <li><a href="#">Recarga de Aire Acondicionado</a></li>
+            <li><a href="#">Mecanica en General</a></li>
+
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Distribucion de Neumaticos la por Mayor y Menor</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
+            <li><a href="#">Yokohama</a></li>
+            <li><a href="#">Bridgestone</a></li>
+            <li><a href="#">Hankook</a></li>
+            <li><a href="#">Apollo</a></li>
+            <li><a href="#">Habilead</a></li>
+            <li><a href="#"> ETC...</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
+          <h4>Redes Sociales</h4>
           <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+            <li><a href="https://web.facebook.com/adsmotors.1">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@ads.motors">Tik Tok</a></li>
           </ul>
         </div>
 
       </div>
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+
 
   </footer>
 

@@ -130,6 +130,22 @@
     </div>
     @endcan
 
+    @can('admin.encargados.index')
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-purple">
+            <div class="inner">
+                <h3>{{$total_configuraciones}}</h3>
+                <p>Configuraciones</p>
+            </div>
+            <div class="icon">
+                <i class="ion fas bi bi-gear"></i>
+            </div>
+            <a href="{{url('admin/configuraciones')}}" class="small-box-footer">Mas Informacion <i class="fas bi-calendar-check"></i></a>
+        </div>
+    </div>
+    @endcan
+
+
 </div>
 
 @can('cargar_datos_areas')

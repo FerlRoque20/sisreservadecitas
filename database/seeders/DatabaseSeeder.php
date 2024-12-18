@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\Secretaria;
-use App\Models\encargado;
+use App\Models\Encargado;
 use App\Models\Area;
 
 

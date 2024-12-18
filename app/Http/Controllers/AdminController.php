@@ -11,6 +11,8 @@ use App\Models\Area;
 use App\Models\Encargado;
 use App\Models\Horario;
 use App\Models\Event;
+use App\Models\Configuracione;
+
 use Illuminate\Http\Request;
 
 
@@ -26,7 +28,7 @@ class AdminController extends Controller
         $total_encargados = Encargado::count();
         $total_horarios = Horario::count();
         $total_eventos = Event::count();
-
+        $total_configuraciones = Configuracione::count();
 
         $areas = Area::all();
         $encargados = Encargado::all();
@@ -42,7 +44,8 @@ class AdminController extends Controller
         'areas',
         'encargados',
         'eventos',
-        'total_eventos'
+        'total_eventos',
+        'total_configuraciones'
         ));
     }
 

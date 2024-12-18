@@ -255,6 +255,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Listado de Encargados</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{url('admin/encargados/reportes')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Reportes</p>
+                </a>
+              </li>
+
             </ul>
           </li>
           @endcan

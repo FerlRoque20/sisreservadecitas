@@ -13,7 +13,7 @@
                     <h3 class="card-title">Modifica la información</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.areas', $area->id) }}" method="POST">
+                    <form action="{{ route('admin.areas.update', $area->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="row">

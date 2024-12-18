@@ -70,24 +70,71 @@ class ConfiguracioneController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Configuracione $configuracione)
+    public function edit($id)
     {
-        //
+        $configuracion = Configuracione::find($id);
+        return view('admin.configuraciones.edit',compact('configuracion'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Configuracione $configuracione)
+    public function update(Request $request, $id)
     {
-        //
+        //$datos = request()->all();
+        //return response()->json($datos);
+
+        $request->validate([
+            'nombre' => 'required',
+            'direccion' => 'required',
+            'telefono' => 'required',
+            'correo' => 'required',
+        ]);
+
+        // Buscar el modelo por su ID
+        $configuracion = Configuracione::find($id);
+
+        // Actualizar los campos
+        $configuracion->nombre = $request->nombre;
+        $configuracion->direccion = $request->direccion;
+        $configuracion->telefono = $request->telefono;
+        $configuracion->correo = $request->correo;
+
+        // Actualizar el logo si se ha subido un archivo
+        if ($request->hasFile('logo')) {
+            Storage::delete('public/'.$configuracion->logo);
+            $configuracion->logo = $request->file('logo')->store('logos', 'public');
+        }
+
+        // Guardar los cambios
+        $configuracion->save();
+
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('admin.configuraciones.index')
+            ->with('mensaje', 'Se actualizó la configuración correctamente')
+            ->with('icono', 'success');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Configuracione $configuracione)
+
+     public function confirmDelete($id)
     {
-        //
+        $configuracion = Configuracione::find($id);
+        return view('admin.configuraciones.delete', compact('configuracion'));
+    }
+ 
+    
+    public function destroy($id)
+    {
+        $configuracion = Configuracione::find($id);
+        Storage::delete('public/'.$configuracion->logo);
+        $configuracion->destroy($id);
+
+        return redirect()->route('admin.configuraciones.index')
+        ->with('mensaje','Se elimino la Configuracion Exitosamente')
+        ->with('icono','success');
     }
 }

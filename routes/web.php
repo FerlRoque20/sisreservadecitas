@@ -153,7 +153,7 @@ Route::get('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'sh
 Route::get('/admin/areas/{id}/edit', [App\Http\Controllers\AreaController::class, 'edit'])->name('admin.areas.edit')->middleware('auth','can:admin.areas.edit');
 
 //Rutas para el administrador - areas - edit - Actualizar Usuario
-Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areas.update')->middleware('auth','can:admin.areas.update');
+Route::put('/admin/areas/{id}', [App\Http\Controllers\AreaController::class, 'update'])->name('admin.areas.update')->middleware('auth', 'can:admin.areas.update');
 
 //Rutas para el administrador - areas - Confirm-delete
 Route::get('/admin/areas/{id}/confirm-delete', [App\Http\Controllers\AreaController::class, 'confirmDelete'])->name('admin.areas.confirmDelete')->middleware('auth','can:admin.areas.confirmDelete');
@@ -197,7 +197,7 @@ Route::get('/admin/vehiculos_', [App\Http\Controllers\VehiculoController::class,
 
 
 
-//Rutas para el administrador Cliente - vehiculos
+//Rutas para el administrador Cliente - encargados
 Route::get('/admin/encargados', [App\Http\Controllers\EncargadoController::class, 'index'])->name('admin.encargados.index')->middleware('auth','can:admin.encargados.index');
 
 //Rutas para el administrador Cliente - encargados - create
@@ -205,6 +205,12 @@ Route::get('/admin/encargados/create', [App\Http\Controllers\EncargadoController
 
 //Rutas para el administrador Cliente  - encargados - store
 Route::post('/admin/encargados/create', [App\Http\Controllers\EncargadoController::class, 'store'])->name('admin.encargados.store')->middleware('auth','can:admin.encargados.store');
+
+//Rutas para el administrador Cliente - reporte
+Route::get('/admin/encargados/reportes', [App\Http\Controllers\EncargadoController::class, 'reportes'])->name('admin.encargados.reportes')->middleware('auth','can:admin.encargados.reportes');
+ 
+//Rutas para el administrador Cliente - reporte
+Route::get('/admin/encargados/pdf', [App\Http\Controllers\EncargadoController::class, 'pdf'])->name('admin.encargados.pdf')->middleware('auth','can:admin.encargados.pdf');
 
 //Rutas para el administrador Cliente - encargados - edit
 Route::get('/admin/encargados/{id}', [App\Http\Controllers\EncargadoController::class, 'show'])->name('admin.encargados.show')->middleware('auth','can:admin.encargados.show');
@@ -220,6 +226,7 @@ Route::get('/admin/encargados/{id}/confirm-delete', [App\Http\Controllers\Encarg
 
 //Rutas para el administrador Cliente - encargados - delete
 Route::delete('/admin/encargados/{id}', [App\Http\Controllers\EncargadoController::class, 'destroy'])->name('admin.encargados.destroy')->middleware('auth','can:admin.encargados.destroy');
+
 
 
 

@@ -139,4 +139,15 @@ class EncargadoController extends Controller
             ->with('mensaje','El encargado ha sido eliminado correctamente. ')
             ->with('icono','success');
     }
+
+    public function reportes()
+    {
+        return view('admin.encargados.reportes');
+    }
+
+    public function pdf()
+    {
+        $pdf = \PDF::loadView('admin.encargados.pdf');
+        return $pdf->stream();
+    }
 }
