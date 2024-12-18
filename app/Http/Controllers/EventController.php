@@ -67,6 +67,7 @@ class EventController extends Controller
             return redirect()->back()->with([
                 'mensaje' => 'El Encargado no está disponible en ese horario.',
                 'icono' => 'error',
+                'hora_reserva' => 'El Encargado no está disponible en ese horario.',
             ]);
         }
 
@@ -80,6 +81,7 @@ class EventController extends Controller
             return redirect()->back()->with([
                 'mensaje' => 'Ya existe una reserva con el mismo encargado en esa fecha y hora.',
                 'icono' => 'error',
+                'hora_reserva' => 'El Encargado no está disponible en ese horario.',
             ]);
         }
 
