@@ -114,6 +114,22 @@
         </div>
     </div>
     @endcan
+
+    @can('admin.encargados.index')
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-dark">
+            <div class="inner">
+                <h3>{{$total_eventos}}</h3>
+                <p>Reservas</p>
+            </div>
+            <div class="icon">
+                <i class="ion fas bi-calendar-check"></i>
+            </div>
+            <a href="" class="small-box-footer">Reservas <i class="fas bi-calendar-check"></i></a>
+        </div>
+    </div>
+    @endcan
+
 </div>
 
 @can('cargar_datos_areas')

@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
             'password'=>hash::make('123456789')
         ])->assignRole('encargado');
 
-        Encargado::create([
+        encargado::create([
             'nombres' => 'Mecanico3',
             'apellidos' => 'Marin',
             'celular' => '963585034',

@@ -25,6 +25,8 @@ class AdminController extends Controller
         $total_areas = Area::count();
         $total_encargados = Encargado::count();
         $total_horarios = Horario::count();
+        $total_eventos = Event::count();
+
 
         $areas = Area::all();
         $encargados = Encargado::all();
@@ -39,7 +41,8 @@ class AdminController extends Controller
         'total_horarios',
         'areas',
         'encargados',
-        'eventos'
+        'eventos',
+        'total_eventos'
         ));
     }
 

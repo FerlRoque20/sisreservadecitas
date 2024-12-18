@@ -90,6 +90,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+               @can('admin.usuarios.index')
+          <li class="nav-item">
+            <a href="{{url('/admin/configuraciones')}}" class="nav-link active">
+              <i class="nav-icon fas bi bi-gear"></i>
+              <p>
+                Configuraciones
+              </p>
+            </a>
+          </li>
+          @endcan
+
 
           @can('admin.usuarios.index')
           <li class="nav-item">
