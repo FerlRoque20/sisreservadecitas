@@ -73,7 +73,8 @@ Este repositorio contiene un proyecto basado en Laravel v. 10 que consiste en po
    user: administrador@gmail.com
    password: 123456789
    ```
- 8. Puedes registrar nuevos usuarios en la ruta /register
+ 9. Puedes registrar nuevos usuarios en la ruta /register
+ 
  ![PHP](images/4.png) 
 ## Capturas del proyecto
 ### Reserva de Citas
