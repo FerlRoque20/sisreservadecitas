@@ -66,12 +66,35 @@ Este repositorio contiene un proyecto basado en Laravel v. 10 que consiste en po
    ```bash
    php artisan serve
    ```
-
-## Características principales
-
-### Núcleo del framework
-- Construido sobre **Laravel 10**, aprovechando las características modernas de PHP y mejores prácticas.
-
+7. Ingresa a  localhost:8000 o en el caso de laravel herd - http://sisreservadecitas.test
+8. Ingresa a la parte administrativa añadiendo el /login. y accede medienate las credenciales.
+ ![PHP](images/3.png) 
+   ```bash
+   user: administrador@gmail.com
+   password: 123456789
+   ```
+ 8. Puedes registrar nuevos usuarios en la ruta /register
+ ![PHP](images/4.png) 
+## Capturas del proyecto
+### Reserva de Citas
+ ![PHP](images/2.png) 
+  ![PHP](images/5.png) 
+### Dashboard - /admin
+  ![PHP](images/6.png) 
+### Usuarios - admin/usuarios
+  ![PHP](images/7.png) 
+### Secretarios - admin/secretarias
+ ![PHP](images/8.png)
+ ### Clientes - admin/clientes
+ ![PHP](images/9.png) 
+  ### Areas - admin/areas
+ ![PHP](images/10.png) 
+   ### Vehículos - admin/vehiculos
+ ![PHP](images/11.png)  
+    ### Encargados - admin/encargados
+ ![PHP](images/12.png)
+   ### Horarios - admin/horarios
+ ![PHP](images/13.png)  
 ### Paquetes incluidos
 
 #### Dependencias de producción
@@ -93,10 +116,10 @@ Este repositorio contiene un proyecto basado en Laravel v. 10 que consiste en po
 ## Funcionalidades de Laravel
 
 - **Ruteo**: Define rutas limpias y RESTful.
-- **Middleware**: Agrega lógica personalizada a las solicitudes HTTP.
+- **Middleware**: Agrega lógica personalizada a las solicitudes HTTP de tal forma que aquí aplicaremos las restricciones para que solo usuarios uqe hayan ingresado puedan realizar peticiones como Insert,Delete, Update.
 - **Blade Templating**: Componentes dinámicos y reutilizables de HTML.
 - **Eloquent ORM**: Gestiona operaciones de bases de datos eficientemente.
-- **Gestión de colas**: Maneja tareas en segundo plano.
+
 
 ## Estructura del proyecto
 
