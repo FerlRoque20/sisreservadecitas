@@ -46,12 +46,7 @@
                                         <a href="{{ url('admin/horarios/'.$horario->id) }}" class="btn btn-info btn-sm">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a href="{{ url('admin/horarios/'.$horario->id.'/edit') }}" class="btn btn-success btn-sm">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        <a href="{{ url('admin/horarios/'.$horario->id.'/confirm-delete') }}" class="btn btn-danger btn-sm">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
+                                        
                                     </div>
                                 </td>
                             </tr>
