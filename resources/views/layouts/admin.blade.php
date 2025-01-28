@@ -14,7 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{url('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{url('dist/css/Correcciones.min.css')}}">
   
   <!-- Iconos de Booststrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-dark" style="background-color: #1a1a1a;">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -68,12 +68,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #1a1a1a;">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      
-      <center><span class="brand-text font-weight-light">ADS MOTORS</span></center>
-    </a>
+   
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -83,20 +80,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
-
+      
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-               @can('admin.usuarios.index')
+          @can('admin.usuarios.index')
           <li class="nav-item">
-            <a href="{{url('/admin/configuraciones')}}" class="nav-link active">
-              <i class="nav-icon fas bi bi-gear"></i>
-              <p>
-                Configuraciones
-              </p>
+            <a href="{{url('/admin/configuraciones')}}" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
+              <i class="nav-icon fas bi bi-gear" style="color: #fff;"></i>
+              <p>Configuraciones</p>
             </a>
           </li>
           @endcan
@@ -104,7 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           @can('admin.usuarios.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon fas bi bi-people-fill"></i>
               <p>
                 Usuarios
@@ -130,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           @can('admin.secretarias.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon fas bi bi-person-circle"></i>
               <p>
                 Secretarios
@@ -156,7 +151,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           @can('admin.clientes.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon fas bi bi-person-fill-check"></i>
               <p>
                 Clientes
@@ -182,7 +177,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           @can('admin.areas.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon fas bi bi-box-fill"></i>
               <p>
                 Areas
@@ -209,7 +204,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           @can('admin.vehiculos.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon bi bi-car-front-fill"></i>
               <p>
                 Vehiculos
@@ -235,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           @can('admin.encargados.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon bi-person-video2"></i>
               <p>
                 Encargados
@@ -264,7 +259,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           
           @can('admin.horarios.index')
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active" style="background-color: #262626; color: #fff; border-radius: 5px;">
               <i class="nav-icon bi-calendar-week"></i>
               <p>
                 Horarios
